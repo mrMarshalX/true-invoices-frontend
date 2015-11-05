@@ -1,0 +1,19 @@
+{
+  "name": "Invoice-Front-End-Web-Page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "~4.12.3",
+    "body-parser": "~1.12.3"
+  },
+  "devDependencies": {
+    "nodemailer": "^1.7.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Marcin Strażyński",
+  "license": "ISC"
+}

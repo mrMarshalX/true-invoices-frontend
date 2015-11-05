@@ -1,0 +1,65 @@
+<div id="client-list-view">
+	<div class="row">
+		<div class="col s12">
+			<div class="card-panel">
+				<div class="right-align">
+					<a class="btn red" ng-click="showClientAddModal()">
+						<i class="material-icons right">note_add</i>
+						Add new client
+					</a>
+				</div>
+				<ul class="collection">
+					<li class="collection-item" ng-repeat="client in clients track by $index">
+						<div class="collapsible-header">
+							{{ client.name }}
+							&nbsp;
+							<span class="bootstrap-badge">{{ (client.invoices && client.invoices.length) || 0 }} {{ (client.invoices.length === 0 || client.invoices.length > 1) ? 'invoices' : 'invoice' }}</span>
+							<a class="secondary-content" ng-click="showClientInfoModal(client)">
+								<i class="material-icons">
+									info_outline
+								</i>
+							</a>
+						</div>
+					</li>
+				</ul>		
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="client-info-modal" class="modal">
+	<div class="modal-content">
+		<h4>
+			{{ currentClient.name }} <span class="bootstrap-badge">{{ currentClient.role }}</span>			
+		</h4>
+		<h5>Address: <span class="right">{{ currentClient.address }}</span></h5>
+		<h5>Tax identifier: <span class="right">{{ currentClient.taxIdentifier }}</span></h5>
+	</div>
+</div>
+
+<div id="client-add-modal" class="modal">
+	<div class="modal-content">
+		<h4>Add new client</h4>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="name" type="text" class="validate" ng-model="newClient.name">
+				<label for="name">name</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="address" type="text" class="validate" ng-model="newClient.address">
+				<label for="address">address</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="input-field col s12">
+				<input id="taxIdentifier" type="text" class="validate" ng-model="newClient.taxIdentifier">
+				<label for="taxIdentifier">tax identifier</label>
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<a class="modal-action modal-close waves-effect waves-green btn-flat" ng-click="saveClient()">Add</a>	
+	</div>
+</div>
