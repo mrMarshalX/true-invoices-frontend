@@ -1,29 +1,129 @@
 module.exports = {
-	invoices: [{
-		"businessId": "123",
-		"documentDate": "2015-11-11",
-		"soldDate": "2015-11-21",
-		"paymentKind": "CASH",
-		"items": [{
-			"commodity": "Pruning trees",
-			"auxiliarySymbol": "SWW/PKWIU/1",
-			"measure": "item",
-			"quantity": 1,
-			"singleNetPrice": 1499.99,
-			"taxRate": 5
-		}, {
-			"commodity": "Mowing",
-			"auxiliarySymbol": "SWW/PKWIU/2",
-			"measure": "item",
-			"quantity": 2,
-			"singleNetPrice": 499.99,
-			"taxRate": 7
-		}],
-			"purchasers": [{
-			"name": "John Doe Inc.",
-			"address": "Spitfire Street 12, London",
-			"taxIdentifier": "1234567890",
-			"role": "Purchaser"
-		}]
-	}]
+	invoices: [
+      {
+        "invoice": {
+          "id": 7,
+          "businessId": "2015/09/07",
+          "documentDate": "2015-10-01",
+          "soldDate": "2015-10-01",
+          "paymentKind": "CASH",
+          "purchasers": [],
+          "paymentDate": "2015-10-01",
+          "items": [],
+          "summary": {
+            "totalNet": 0.00,
+            "totalGross": 0.00,
+            "itemSummaries": []
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/invoice/7"
+          },
+          "update": {
+            "href": "http://localhost/invoice/7"
+          }
+        }
+      },
+      {
+        "invoice": {
+          "id": 6,
+          "businessId": "2015/09/06",
+          "documentDate": "2015-10-01",
+          "soldDate": "2015-10-01",
+          "paymentKind": "CASH",
+          "purchasers": [],
+          "paymentDate": "2015-10-01",
+          "items": [],
+          "summary": {
+            "totalNet": 0.00,
+            "totalGross": 0.00,
+            "itemSummaries": []
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/invoice/6"
+          },
+          "update": {
+            "href": "http://localhost/invoice/6"
+          }
+        }
+      },
+      {
+        "invoice": {
+          "id": 5,
+          "businessId": "2015/09/05",
+          "documentDate": "2015-10-01",
+          "soldDate": "2015-10-01",
+          "paymentKind": "CASH",
+          "purchasers": [],
+          "paymentDate": "2015-10-01",
+          "items": [],
+          "summary": {
+            "totalNet": 0.00,
+            "totalGross": 0.00,
+            "itemSummaries": []
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/invoice/5"
+          },
+          "update": {
+            "href": "http://localhost/invoice/5"
+          }
+        }
+      },
+      {
+        "invoice": {
+          "id": 4,
+          "businessId": "2015/09/04",
+          "documentDate": "2015-10-01",
+          "soldDate": "2015-10-01",
+          "paymentKind": "CASH",
+          "purchasers": [],
+          "paymentDate": "2015-10-01",
+          "items": [],
+          "summary": {
+            "totalNet": 0.00,
+            "totalGross": 0.00,
+            "itemSummaries": []
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/invoice/4"
+          },
+          "update": {
+            "href": "http://localhost/invoice/4"
+          }
+        }
+      },
+      {
+        "invoice": {
+          "id": 3,
+          "businessId": "2015/09/03",
+          "documentDate": "2015-10-01",
+          "soldDate": "2015-10-01",
+          "paymentKind": "CASH",
+          "purchasers": [],
+          "paymentDate": "2015-10-01",
+          "items": [],
+          "summary": {
+            "totalNet": 0.00,
+            "totalGross": 0.00,
+            "itemSummaries": []
+          }
+        },
+        "_links": {
+          "self": {
+            "href": "http://localhost/invoice/3"
+          },
+          "update": {
+            "href": "http://localhost/invoice/3"
+          }
+        }
+      }
+    ]
 };

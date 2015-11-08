@@ -1,8 +1,16 @@
 <div id="invoices-view">
 	<div class="row">
 		<div class="col s12">
-			<div class="card-panel center-align">
-				I will definitely do this view later! ;-)
+			<div class="card-panel">
+				<ul class="collection">
+					<li class="collection-item avatar" ng-repeat="invoice in invoices track by $index">
+						<i class="material-icons circle" ng-class="{'red' : $index % 3 === 0 }">{{ $index % 3 === 0 ? 'assignment_late' : 'folder' }}</i>
+						<span class="title">{{ invoice.invoice.businessId }}</span>
+						<p>Sold date: {{ invoice.invoice.soldDate }}</p>
+						<p>Payment date: {{ invoice.invoice.paymentDate }}</p>
+						<a href="" class="secondary-content" ng-click="showInvoice(invoice)"><i class="material-icons red-text">send</i></a>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

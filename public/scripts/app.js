@@ -3,7 +3,7 @@ angular.module('invoiceFrontEndApp', ['ngRoute'])
 	URL: 'http://localhost',
 	PORT: 3002
 })
-.constant('defaultRoute', '/api/clients')
+.constant('defaultRoute', '')
 .config(function ($routeProvider, $locationProvider) {
 	$routeProvider.when('/clients', {
 		templateUrl: 'views/clientView.html',
@@ -13,6 +13,11 @@ angular.module('invoiceFrontEndApp', ['ngRoute'])
 	.when('/invoices', {
 		templateUrl: 'views/invoicesView.html',
 		controller: 'InvoicesViewCtrl',
+		url: '/api/invoices'
+	})
+	.when('/invoices/generate', {
+		templateUrl: 'views/invoicesGenarateView.html',
+		controller: 'InvoicesGenerateViewCtrl',
 		url: '/api/invoices'
 	})
 	.otherwise({

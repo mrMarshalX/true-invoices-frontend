@@ -21,6 +21,8 @@ app.get('/api/clients', function (req, res) {
 });
 
 app.get('/api/invoices', function (req, res) {
+	var pageNumber = req.query.page || 0, pageSize = req.query.size || content.invoices.length;
+	
 	res.send(content.invoices);
 });
 
