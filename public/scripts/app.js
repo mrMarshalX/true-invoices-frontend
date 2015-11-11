@@ -1,8 +1,4 @@
 angular.module('invoiceFrontEndApp', ['ngRoute'])
-.constant('api', {
-	URL: 'http://localhost',
-	PORT: 3002
-})
 .constant('defaultRoute', '')
 .config(function ($routeProvider, $locationProvider) {
 	$routeProvider.when('/clients', {
@@ -26,7 +22,9 @@ angular.module('invoiceFrontEndApp', ['ngRoute'])
 
 	$locationProvider.html5Mode(true);
 })
-.run(function ($rootScope, defaultRoute) {
+.run(function ($rootScope, $window, http, defaultRoute) {
+	http.config($window.location.origin);
+
 	$rootScope.$on('$routeChangeStart', function (event, next, current) {		
 		$rootScope.url = (next.$$route && next.$$route.url) || defaultRoute;		
 	});

@@ -1,5 +1,5 @@
 angular.module('invoiceFrontEndApp')
-.controller('ClientViewCtrl', function ($rootScope, $scope, $http, api, formResetService) {
+.controller('ClientViewCtrl', function ($rootScope, $scope, http, formResetService) {
 	var url = $rootScope.url;
 
 	$scope.newClient = {
@@ -35,7 +35,7 @@ angular.module('invoiceFrontEndApp')
 		$('#client-add-modal').closeModal();
 	};
 
-	$http.get(api.URL + ':' + api.PORT + url)
+	http.get(url)
 	.success(function (clients) {
 		$scope.clients = clients;
 	})
